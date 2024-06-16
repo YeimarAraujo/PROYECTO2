@@ -22,7 +22,7 @@ public class ArrayListProducto implements IProducto{
     @Override
     public Producto buscarPorNombre(String nombreProducto) {
        for(Producto producto: this.productos){
-            if(producto.getNombreProducto()==nombreProducto){
+            if(producto.getNombreProducto().equals(nombreProducto)){
                 return producto;
             }
         }
@@ -30,7 +30,7 @@ public class ArrayListProducto implements IProducto{
     }
 
     @Override
-    public Producto buscarPorCodigo(float codigo) {
+    public Producto buscarPorCodigo(int codigo) {
             for(Producto producto: this.productos){
             if(producto.getCod()==codigo){
                 return producto;

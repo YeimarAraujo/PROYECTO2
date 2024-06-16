@@ -13,10 +13,10 @@ import java.util.ArrayList;
 public class Producto {
     public String nombreProducto;
     private float precio;
-    private float cod;
+    private int cod;
     private final ArrayList<Reseña> reseñas = new ArrayList<>();
 
-    public Producto(String nombreProducto, float precio, float cod) {
+    public Producto(String nombreProducto, float precio, int cod) {
         this.nombreProducto = nombreProducto;
         this.precio = precio;
         this.cod = cod;
@@ -38,19 +38,19 @@ public class Producto {
         this.precio = precio;
     }
 
-    public float getCod() {
+    public int getCod() {
         return cod;
     }
 
-    public void setCod(float cod) {
+    public void setCod(int cod) {
         this.cod = cod;
     }
 
     @Override
     public String toString() {
-        return  "Nombre Producto : " + nombreProducto + 
-                "Precio : $" + precio + 
-                "Codigo : " + cod + '}';
+        return  "\nNombre Producto : " + nombreProducto + 
+                "\nPrecio : $" + precio + 
+                "\nCodigo : " + cod ;
     }
 
     public ArrayList<Reseña> obtenerReseñas() {

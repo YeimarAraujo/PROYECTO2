@@ -14,7 +14,7 @@ import java.util.ArrayList;
 public interface IProducto {
     boolean agregarProducto(Producto producto);
     Producto buscarPorNombre(String nombreProducto);
-    Producto buscarPorCodigo(float codigo);
+    Producto buscarPorCodigo(int codigo);
     ArrayList<Producto> obtenerProductos();
     
 }

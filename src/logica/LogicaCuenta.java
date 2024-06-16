@@ -13,6 +13,7 @@ import entidades.Emprendimiento;
 import java.util.ArrayList;
 import java.util.Scanner;
 import persistencia.ArrayListCuenta;
+import persistencia.ArrayListEmprendimiento;
 import persistencia.ICuenta;
 import persistencia.IEmprendimiento;
 import presentacion.Menu;
@@ -23,12 +24,13 @@ import presentacion.Menu;
  */
 public class LogicaCuenta {
     private final ArrayList<CuentaUsuarios> cuentas ;
-    private ICuenta persistencia;
+    private final ICuenta persistencia;
      private IEmprendimiento persistenciaE;
     private final Scanner scanner;
    
     public LogicaCuenta() {
         this.persistencia = new ArrayListCuenta();
+        this.persistenciaE = new ArrayListEmprendimiento();
         this.cuentas = new ArrayList<>();
         this.scanner = new Scanner(System.in);
     }
@@ -75,17 +77,9 @@ public class LogicaCuenta {
     }
     return result;
 }
-         public Emprendimiento buscarEmprendimiento(){
-          System.out.print("Ingrese el nombre del emprendimiento: ");
-        String nombreEmprendimiento = scanner.nextLine();
-                return this.persistenciaE.buscarEmprendimientos(nombreEmprendimiento);
-         
-}
     public boolean convertiraEmprendedor(String username, String password) {
-    // Find the client in the cuentas list using the username
-    for (CuentaUsuarios cuenta : cuentas) {
-        if (cuenta.getUsername() == username && cuenta.getPassword()== password && cuenta instanceof Cliente) {
-            
+for (CuentaUsuarios cuenta : cuentas) {
+        if (cuenta.getUsername().equals(username) && cuenta.getPassword().equals(password) && cuenta instanceof Cliente) {
             Cliente cliente = (Cliente) cuenta;
             
             Emprendedor emprendedor = new Emprendedor(
@@ -97,7 +91,6 @@ public class LogicaCuenta {
             );
             cuentas.remove(cliente);
             cuentas.add(emprendedor);
-            
             
             return true;
         }

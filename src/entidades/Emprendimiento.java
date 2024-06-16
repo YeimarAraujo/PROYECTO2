@@ -4,7 +4,6 @@
  */
 package entidades;
 
-import entidades.Producto;
 import java.util.ArrayList;
 
 /**
@@ -51,11 +50,11 @@ public class Emprendimiento {
 
     @Override
     public String toString() {
+   
         return  
-                " NombreEmprendimiento : " + nombreEmprendimiento + 
-                " Nit : " + nit +
-                " Direccion : " + direccion + 
-                " Productos : " + productos + '}';
+                " \nNombreEmprendimiento : " + nombreEmprendimiento + 
+                " \nNit : " + nit +
+                " \nDireccion : " + direccion ;
     }
     
     
