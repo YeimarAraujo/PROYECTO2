@@ -79,5 +79,9 @@ public abstract class CuentaUsuarios {
     public boolean Emprendedor() {
     return this instanceof Emprendedor;
 }
+
+    public boolean Cliente() {
+         return this instanceof Cliente;
+       }
     
 }

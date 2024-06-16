@@ -26,7 +26,7 @@ public class ArrayListEmprendimiento implements IEmprendimiento{
     @Override
      public Emprendimiento buscarEmprendimientos(String nombreEmprendimiento) {
         for (Emprendimiento emprendimiento : emprendimientos) {
-            if (emprendimiento.getNombreEmprendimiento()== nombreEmprendimiento) {
+            if (emprendimiento.getNombreEmprendimiento().equals(nombreEmprendimiento)) {
                 return emprendimiento;
             }
         }

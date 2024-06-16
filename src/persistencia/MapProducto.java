@@ -32,7 +32,7 @@ public class MapProducto implements IProducto {
     }
 
     @Override
-    public Producto buscarPorCodigo(float codigo) {
+    public Producto buscarPorCodigo(int codigo) {
         return this.productos.get(codigo); }
 
     @Override
