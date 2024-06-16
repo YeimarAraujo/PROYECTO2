@@ -171,7 +171,7 @@ public class Menu {
     System.out.println("Registro exitoso!");
     }
     public void convertirEmprendedor(){
-        System.out.println("\n  CONVERTIR A EMPRENDEDOR              ");
+        System.out.println("\n  CONVERTIR A EMPRENDEDOR            ");
         System.out.println("-----------------------------------");
                 scanner.nextLine();
         System.out.print("Nombre de usuario: ");
