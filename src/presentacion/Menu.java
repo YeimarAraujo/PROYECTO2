@@ -195,7 +195,7 @@ public class Menu {
         String direccion = scanner.nextLine();
         }
         if(tipo == 2){
-            String direccion = ("SIN DIRECCION");
+            String direccion = ("NO TIENE DIRECCION");
         }
            
         this.logicaEmprendimiento.crearEmprendimiento(emprendimiento);
