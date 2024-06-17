@@ -5,13 +5,14 @@
 package persistencia;
 
 import entidades.Producto;
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  *
  * @author POWER
  */
-public interface IProducto {
+public interface IProducto extends Serializable {
     boolean agregarProducto(Producto producto);
     Producto buscarPorNombre(String nombreProducto);
     Producto buscarPorCodigo(int codigo);

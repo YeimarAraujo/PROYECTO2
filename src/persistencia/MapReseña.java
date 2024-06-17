@@ -18,8 +18,9 @@ public class MapReseña implements IReseña{
      private Map<String, Reseña> reseñas = new HashMap<>();
 
     @Override
-    public void agregarReseña(Reseña reseña) {
-        reseñas.put(reseña.getComentario(), reseña);
+    public boolean agregarReseña(Reseña reseña) {
+        this.reseñas.put(reseña.getComentario(), reseña);
+        return true;
     }
 
     @Override

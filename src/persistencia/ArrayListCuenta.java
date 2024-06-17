@@ -13,12 +13,21 @@ import java.util.ArrayList;
  */
 public class ArrayListCuenta implements ICuenta{
     
-     private final ArrayList<CuentaUsuarios> cuentas = new ArrayList<>();
+     private ArrayList<CuentaUsuarios> cuentas = new ArrayList<>();
 
     @Override
     public boolean agregarCuenta(CuentaUsuarios cuenta) {
         return cuentas.add(cuenta);
     }
+
+    public ArrayList<CuentaUsuarios> getCuentas() {
+        return cuentas;
+    }
+
+    public void setCuentas(ArrayList<CuentaUsuarios> cuentas) {
+        this.cuentas = cuentas;
+    }
+    
 
     @Override
     public CuentaUsuarios obtenerCuenta(String username) {
@@ -31,13 +40,10 @@ public class ArrayListCuenta implements ICuenta{
     }
 
     @Override
-    public boolean validarPassword(String username, String password) {
-        for (CuentaUsuarios cuenta : cuentas) {
-            if (cuenta.username.equals(username)) {
-                return cuenta.validarPassword(password);
-            }
-        }
-        return false;
+    public boolean eliminar(CuentaUsuarios cuenta) {
+        
+         return this.cuentas.remove(cuenta);
+        
     }
 
 }

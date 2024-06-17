@@ -6,7 +6,7 @@ package logica;
 
 import entidades.Producto;
 import java.util.ArrayList;
-import persistencia.ArrayListProducto;
+import persistencia.ArchivoObjetoProducto;
 import persistencia.IProducto;
 
 /**
@@ -18,7 +18,7 @@ public class LogicaProducto {
        private final ArrayList<Producto> productos;
         
     public LogicaProducto() {
-      this.persistencia = new ArrayListProducto();
+      this.persistencia = new ArchivoObjetoProducto();
        this.productos = new ArrayList<>();
     }
     

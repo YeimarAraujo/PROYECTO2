@@ -4,6 +4,7 @@
  */
 package presentacion;
 
+import entidades.Cliente;
 import entidades.CuentaUsuarios;
 import entidades.Emprendimiento;
 import entidades.Producto;
@@ -13,6 +14,7 @@ import java.util.Scanner;
 import logica.LogicaCuenta;
 import logica.LogicaEmprendimiento;
 import logica.LogicaProducto;
+import logica.LogicaUsuario;
 
 /**
  *
@@ -26,6 +28,7 @@ public class Menu {
     LogicaCuenta logicaCuenta = new LogicaCuenta();
     LogicaEmprendimiento logicaEmprendimiento = new LogicaEmprendimiento();
     LogicaProducto logicaProducto = new LogicaProducto();
+     LogicaUsuario logicaUsuario = new LogicaUsuario();
     public Menu() {
         this.scanner = new Scanner(System.in);
     }
@@ -38,7 +41,7 @@ public class Menu {
             System.out.println("-----------------------------");
             System.out.println("1. Inicar Sesion             ");
             System.out.println("2. Registrarse               ");
-            System.out.println("5. Salir                     ");
+            System.out.println("3. Salir                     ");
             System.out.println("-----------------------------");
             System.out.print("Seleccione: ");
             
@@ -118,7 +121,7 @@ public class Menu {
                 break;
             case 2: buscarEmprendimiento();
                 break;
-            case 3: convertirEmprendedor();
+            case 3: modoEmprendedor();
                     opcion2 = 4;
                 break;
             case 4: break;
@@ -133,7 +136,7 @@ public class Menu {
         scanner.nextLine();
         System.out.print("Ingrese su contraseña: ");
         String password = scanner.nextLine();
-        this.logicaCuenta.login(username, password);
+        this.logicaUsuario.login(username, password);
  
                 
         
@@ -170,16 +173,44 @@ public class Menu {
         System.out.println("");
     System.out.println("Registro exitoso!");
     }
-    public void convertirEmprendedor(){
-        System.out.println("\n  CONVERTIR A EMPRENDEDOR            ");
+      private void registrarsecomoEmprendedor(){
+        CuentaUsuarios cuenta = null;
+        System.out.println(" \n    CONVERTIR A EMPRENDEDOR               ");
         System.out.println("-----------------------------------");
-                scanner.nextLine();
+        System.out.println("Por favor ingrese la siguiente información para registrarse:");
         System.out.print("Nombre de usuario: ");
         String username = scanner.nextLine();
+        scanner.nextLine();
         System.out.print("Contraseña: ");
         String password = scanner.nextLine();
+        System.out.print("Correo electrónico: ");
+        String correoElectronico = scanner.nextLine();
+        System.out.print("Número de identificación: ");
+        String cedula = scanner.nextLine();
+        System.out.print("Edad: ");
+        int edad = scanner.nextInt();
+        scanner.nextLine(); 
         
-        this.logicaCuenta.convertiraEmprendedor(username, password);
+        int tipo = 2;
+        
+       cuenta = this.logicaCuenta.crearCuenta(username, password, correoElectronico, cedula, edad, tipo);
+       this.logicaCuenta.registrar(cuenta);
+
+
+        System.out.println("");
+    System.out.println("Registro exitoso!");
+    }
+    public void modoEmprendedor(){
+        System.out.println("¿Estas seguro de querer cambiarte a emprendedor? (tu cuenta cliente se eliminara) 1- si / 2-no");
+        int tipo = scanner.nextInt();
+        
+        switch(tipo){
+            case 1: 
+                this.registrarsecomoEmprendedor();
+                break;
+            case 2: 
+                break;
+        }
     }
   public void crearEmprendimiento(){
     Emprendimiento emprendimiento = null;

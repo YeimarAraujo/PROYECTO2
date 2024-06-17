@@ -7,6 +7,7 @@ package logica;
 import persistencia.IReseña;
 import entidades.Reseña;
 import java.util.ArrayList;
+import persistencia.ArchivoObjetoReseña;
 
 /**
  *
@@ -15,8 +16,8 @@ import java.util.ArrayList;
 public class LogicaReseña {
         private final IReseña reseñas;
 
-    public LogicaReseña(IReseña reseñas) {
-        this.reseñas = reseñas;
+    public LogicaReseña() {
+        this.reseñas = new ArchivoObjetoReseña();
     }
      public void agregarReseña(Reseña reseña) {
         reseñas.agregarReseña(reseña);
