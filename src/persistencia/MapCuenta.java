@@ -25,14 +25,15 @@ public class MapCuenta implements ICuenta{
     }
 
     @Override
-    public boolean validarPassword(String username, String password) {
-        CuentaUsuarios cuenta = cuentas.get(username);
-        return cuenta != null && cuenta.validarPassword(password);
+    public CuentaUsuarios obtenerCuenta(String username) {
+        return cuentas.get(username);
     }
 
     @Override
-    public CuentaUsuarios obtenerCuenta(String username) {
-        return cuentas.get(username);
+    public boolean eliminar(CuentaUsuarios cuenta) {
+        return false;
+                
+               
     }
 
    

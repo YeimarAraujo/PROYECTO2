@@ -5,13 +5,14 @@
 package persistencia;
 
 import entidades.Reseña;
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  *
  * @author POWER
  */
-public  interface IReseña {
-    void agregarReseña(Reseña reseña);
+public  interface IReseña extends Serializable{
+    boolean agregarReseña(Reseña reseña);
     ArrayList<Reseña> obtenerReseñas();
 }

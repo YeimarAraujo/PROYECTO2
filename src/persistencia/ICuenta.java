@@ -5,13 +5,14 @@
 package persistencia;
 
 import entidades.CuentaUsuarios;
+import java.io.Serializable;
 
 /**
  *
  * @author POWER
  */
-public interface ICuenta {
+public interface ICuenta extends Serializable{
      boolean agregarCuenta(CuentaUsuarios cuenta);     
     CuentaUsuarios obtenerCuenta(String username);
-    boolean validarPassword(String username, String password);
+    boolean eliminar (CuentaUsuarios cuenta);
 }

@@ -8,6 +8,7 @@ package logica;
 import entidades.Emprendimiento;
 import entidades.Producto;
 import java.util.ArrayList;
+import persistencia.ArchivoObjetoEmprendimiento;
 import persistencia.ArrayListEmprendimiento;
 import persistencia.IEmprendimiento;
 
@@ -20,7 +21,7 @@ public class LogicaEmprendimiento {
     private IEmprendimiento persistencia;
 
     public LogicaEmprendimiento() {
-        this.persistencia = new ArrayListEmprendimiento();
+        this.persistencia = new ArchivoObjetoEmprendimiento();
         this.emprendimientos = new ArrayList<>();
       
     }

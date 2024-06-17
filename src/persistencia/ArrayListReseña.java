@@ -15,8 +15,8 @@ public class ArrayListReseña implements IReseña{
      private ArrayList<Reseña> reseñas = new ArrayList<>();
 
     @Override
-    public void agregarReseña(Reseña reseña) {
-        reseñas.add(reseña);
+    public boolean agregarReseña(Reseña reseña) {
+      return  reseñas.add(reseña);
     }
 
     @Override

@@ -5,13 +5,13 @@
 package persistencia;
 
 import entidades.Emprendimiento;
-import java.util.ArrayList;
+import java.io.Serializable;
 
 /**
  *
  * @author POWER
  */
-public interface IEmprendimiento {
+public interface IEmprendimiento extends Serializable{
     boolean agregarEmprendimiento(Emprendimiento emprendimiento);
-    Emprendimiento buscarEmprendimientos(String nombre);
+    Emprendimiento buscarEmprendimientos(String nombreEmprendimiento);
 }
